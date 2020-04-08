@@ -5,20 +5,24 @@ console.log("working");
 // approximate geographical center of the United States, wz zoom level of “4” 
 let map = L.map('mapid').setView([40.7, -94.5], 4);
 
-//  Add a marker or circle to the map for Los Angeles, California.
-//let marker = L.marker([34.0522, -118.2437]).addTo(map);
-// Option1: L.circle 
-//L.circle([34.0522, -118.2437], {
-//	radius: 100
-// }).addTo(map);
-// Option2: L.circleMarker
-L.circleMarker([34.0522, -118.2437],{
-	radius: 300,
-	// black line
-	color: "black",
-	// light yellow circle
-	fillColor: '#ffffa1'
-}).addTo(map);
+// Get data from cities.js
+let cityData = cities;
+
+// Loop through the cities array and create one marker or circle for each city.
+cityData.forEach(function(city) {
+	console.log(city)
+	// marker() is to create a marker for each city
+	//L.marker(city.location)
+	L.circleMarker(city.location,{
+		// radius is based on city.population/100000
+		radius: city.population/100000
+	})
+	// Use Leaflet’s bindPopup() method to bind a Popup to the Marker 
+	// toLocaleString() method after city.population create thousands separators (ex. 2,325,502) 
+	.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.population.toLocaleString() + "</h3>")
+	.addTo(map);
+});
+
 
 
 // We create the tile layer (a street level map) that will be the background of our map.
@@ -32,3 +36,5 @@ let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/t
 });
 // Then we add our 'graymap' tile layer to the map.
 streets.addTo(map);
+
+
