@@ -20,3 +20,4 @@ Add a third map style as an additional tile layer, add tectonic plate GeoJSON da
 •	Add the tectonic plate data as an overlay with the earthquake data.<br>
 •	Add a third map style to allow the user to select from three different maps.
 
+![](web.PNG)
