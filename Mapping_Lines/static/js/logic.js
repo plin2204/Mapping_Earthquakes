@@ -15,8 +15,6 @@ L.polyline(line, {
 }).addTo(map);
   
 
-
-
 // Create the tile layer (a street level map) that will be the background of our map.
 //let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 // for dar map view, use dark-v10 instead of streets-v11
