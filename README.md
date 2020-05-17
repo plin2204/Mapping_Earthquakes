@@ -1,6 +1,7 @@
 # Mapping_Earthquakes
 Use the Leaflet.js Application Programming Interface (API) to populate a geographical map with GeoJSON earthquake data from a URL
 
+## Steps
 • Create a branch from the master branch on GitHub.<br>
 • Add, commit, and push data to a GitHub branch.<br>
 • Merge a branch with the master branch on GitHub.<br>
@@ -12,7 +13,7 @@ Use the Leaflet.js Application Programming Interface (API) to populate a geograp
 • Render maps on a local server.
 
 
-## Challenge 13
+## Discussion
 Add a third map style as an additional tile layer, add tectonic plate GeoJSON data to the map to illustrate the relationship between the location and frequency of seismic activity and tectonic plates.
 
 •	Use d3.json() to get tectonic plate data and add the data using the L.geoJSON() layer. <br>
